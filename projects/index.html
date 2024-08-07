@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tire Inventory Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tire Inventory Management</h1>
+
+        <div class="section">
+            <h2>Add Tire</h2>
+            <input type="text" id="add_tire_id" placeholder="Tire ID" required>
+            <input type="text" id="add_tire_type" placeholder="Type (new/used)" required>
+            <input type="text" id="add_condition" placeholder="Condition" required>
+            <input type="number" id="add_price" placeholder="Price" required>
+            <input type="number" id="add_quantity" placeholder="Quantity" required>
+            <button onclick="addTire()">Add Tire</button>
+            <div id="add_tire_message" class="message"></div>
+        </div>
+
+        <div class="section">
+            <h2>Sell Tire</h2>
+            <input type="text" id="sell_tire_id" placeholder="Tire ID" required>
+            <input type="number" id="sell_quantity" placeholder="Quantity" required>
+            <button onclick="sellTire()">Sell Tire</button>
+            <div id="sell_tire_message" class="message"></div>
+        </div>
+
+        <div class="section">
+            <h2>Generate Invoice</h2>
+            <textarea id="invoice_items" placeholder='Enter items as JSON (e.g. [{"tire_id": "T001", "tire_type": "new", "condition": "good", "price": 100, "quantity": 2}, ...])' rows="5" required></textarea>
+            <button onclick="generateInvoice()">Generate Invoice</button>
+            <div id="invoice_message" class="message"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
